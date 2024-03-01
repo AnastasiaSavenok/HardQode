@@ -19,9 +19,11 @@ from django.urls import path, include
 from rest_framework import routers
 
 from src.products.views import ProductViewSet
+from src.lessons.views import LessonViewSet
 
 router = routers.SimpleRouter()
 router.register(r'product', ProductViewSet)
+router.register(r'lesson', LessonViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

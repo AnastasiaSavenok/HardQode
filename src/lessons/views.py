@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import viewsets
 
-# Create your views here.
+from src.lessons import models, serializers
+
+
+class LessonViewSet(viewsets.ModelViewSet):
+    queryset = models.Lesson.objects.all()
+    serializer_class = serializers.LessonSerializer
